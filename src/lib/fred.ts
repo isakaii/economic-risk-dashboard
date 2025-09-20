@@ -48,13 +48,13 @@ export interface FredSeriesResponse {
 const FRED_BASE_URL = 'https://api.stlouisfed.org/fred'
 
 // Server-side API key (not exposed to client)
-const getApiKey = () => {
+const getApiKey = (): string | null => {
   if (typeof window !== 'undefined') {
     // Client-side: API calls should go through our Next.js API routes
     return null
   }
   // Server-side: use environment variable
-  return process.env.NEXT_PUBLIC_FRED_API_KEY
+  return process.env.NEXT_PUBLIC_FRED_API_KEY || null
 }
 
 export class FredClient {
@@ -239,7 +239,7 @@ export const fredClient = (() => {
       getSeriesObservations: () => Promise.reject(new Error('Use API routes from client')),
       getSeriesInfo: () => Promise.reject(new Error('Use API routes from client')),
       getLatestValue: () => Promise.reject(new Error('Use API routes from client'))
-    } as FredClient
+    } as unknown as FredClient
   }
   // Server-side: create the real client
   return new FredClient()
