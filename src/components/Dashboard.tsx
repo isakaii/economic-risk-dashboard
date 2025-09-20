@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import IndicatorCard from './IndicatorCard'
 import RiskAlert from './RiskAlert'
 import { ECONOMIC_INDICATORS, type IndicatorKey } from '@/lib/fred'
@@ -19,9 +20,17 @@ export default function Dashboard() {
                 Monitor key economic indicators to assess credit risk and inform lending decisions
               </p>
             </div>
-            <div className="text-right">
-              <div className="text-sm text-gray-500">Built with Federal Reserve Economic Data</div>
-              <div className="text-sm font-medium text-gray-700">FinTechCo</div>
+            <div className="flex items-center space-x-4">
+              <Link
+                href="/portfolio"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-colors"
+              >
+                Portfolio Risk Analysis
+              </Link>
+              <div className="text-right">
+                <div className="text-sm text-gray-500">Built with Federal Reserve Economic Data</div>
+                <div className="text-sm font-medium text-gray-700">FinTechCo</div>
+              </div>
             </div>
           </div>
         </div>
