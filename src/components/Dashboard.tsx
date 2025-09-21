@@ -24,6 +24,23 @@ export default function Dashboard() {
               <div className="text-sm font-medium text-gray-700">FinTechCo</div>
             </div>
           </div>
+          {/* Navigation */}
+          <div className="mt-4 border-t pt-4">
+            <nav className="flex space-x-8">
+              <a
+                href="/"
+                className="text-blue-600 border-b-2 border-blue-600 pb-2 text-sm font-medium"
+              >
+                Economic Indicators
+              </a>
+              <a
+                href="/portfolio"
+                className="text-gray-500 hover:text-gray-700 pb-2 text-sm font-medium border-b-2 border-transparent hover:border-gray-300"
+              >
+                Portfolio Exposure
+              </a>
+            </nav>
+          </div>
         </div>
       </header>
 
