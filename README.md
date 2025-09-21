@@ -1,4 +1,4 @@
-# Economic Risk Dashboard
+# FinTechCo Economic Risk Dashboard
 
 A Next.js application that monitors economic indicators from FRED API to help banking teams track credit risk.
 
